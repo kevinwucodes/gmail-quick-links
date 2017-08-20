@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "Gmail Quick Links",
+  "version": "0.1.0",
+  "description": "a replacement for Gmail Quick Links",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+
+  "page_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+    "default_title": "Click on me!!"
+  },
+
+  "author": "Kevin Wu",
+
+  "content_scripts": [
+     {
+       "matches": ["https://mail.google.com/*"],
+       "css": ["styles.css"],
+       "js": ["static.js", "runtime.js"]
+     }
+   ],
+
+   "permissions": [
+     "storage"
+   ]
+
+}
