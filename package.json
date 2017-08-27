@@ -9,7 +9,8 @@
   ],
   "main": "index.js",
   "scripts": {
-    "dev": "webpack -w"
+    "dev": "webpack --config webpack.dev.js --watch",
+    "dist": "webpack --config webpack.dist.js"
   },
   "author": "Kevin Wu <kevin.wu@gmail.com>",
   "homepage": "https://github.com/kevinwucodes/gmail-quick-links",
@@ -24,12 +25,15 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-minify-webpack-plugin": "^0.2.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.16",
     "copy-webpack-plugin": "^4.0.1",
     "html-webpack-plugin": "^2.30.1",
-    "webpack": "^3.5.5"
+    "webpack": "^3.5.5",
+    "webpack-merge": "^4.1.0"
   },
   "dependencies": {
     "react": "^15.6.1",

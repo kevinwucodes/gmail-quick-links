@@ -15,7 +15,7 @@
   "content_scripts": [
      {
        "matches": ["https://mail.google.com/*"],
-       "js": ["bundle.js"]
+       "js": ["dist.gmailquicklinks.bundle.js"]
      }
    ],
 
