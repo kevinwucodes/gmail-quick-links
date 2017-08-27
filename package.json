@@ -1,0 +1,38 @@
+{
+  "name": "gmail-quick-links",
+  "version": "0.1.0",
+  "description": "a replacement for Gmail Quick Links",
+  "keywords": [
+    "chrome extension",
+    "gmail",
+    "quick links"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack -w"
+  },
+  "author": "Kevin Wu <kevin.wu@gmail.com>",
+  "homepage": "https://github.com/kevinwucodes/gmail-quick-links",
+  "bugs": {
+    "url": "https://github.com/kevinwucodes/gmail-quick-links/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kevinwucodes/gmail-quick-links"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "copy-webpack-plugin": "^4.0.1",
+    "html-webpack-plugin": "^2.30.1",
+    "webpack": "^3.5.5"
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}
