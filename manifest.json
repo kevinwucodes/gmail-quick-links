@@ -4,29 +4,24 @@
   "version": "0.1.0",
   "description": "a replacement for Gmail Quick Links",
   "icons": {
-    "16": "icon.png",
-    "48": "icon.png",
-    "128": "icon.png"
+    "16": "./assets/icon16.png",
+    "48": "./assets/icon48.png",
+    "128": "./assets/icon48.png"
   },
 
-  "page_action": {
-    "default_icon": "icon.png",
-    "default_popup": "popup.html",
-    "default_title": "Click on me!!"
-  },
+  
 
-  "author": "Kevin Wu",
+  "author": "Kevin Wu <kevin.wu@gmail.com>",
+  "homepage_url": "https://github.com/kevinwucodes/gmail-quick-links",
 
   "content_scripts": [
      {
        "matches": ["https://mail.google.com/*"],
-       "css": ["styles.css"],
-       "js": ["static.js", "runtime.js"]
+       "js": ["bundle.js"]
      }
    ],
 
    "permissions": [
      "storage"
    ]
-
 }
