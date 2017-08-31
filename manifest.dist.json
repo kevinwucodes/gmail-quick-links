@@ -3,6 +3,7 @@
   "name": "Gmail Quick Links",
   "version": "0.1.0",
   "description": "a replacement for Gmail Quick Links",
+  "short_name": "Gmail Links",
   "icons": {
     "16": "./assets/icon16.png",
     "48": "./assets/icon48.png",
