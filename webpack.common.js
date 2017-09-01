@@ -3,8 +3,11 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 // the path(s) that should be cleaned
 let pathsToClean = [
-  'dev',
-  'dist'
+  'dev-ff',
+  'dev-chrome',
+
+  'dist-ff',
+  'dist-chrome'
 ]
 
 const config = {
