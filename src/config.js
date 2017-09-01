@@ -11,10 +11,7 @@ export const storage = chrome.storage
 export const getGmailLocationToInject = () => {
   // where we want to put the search quick links
   // this has be be defined after the page loads and becomes ready
-  // return document.querySelector("div.wT")
-  // return document.querySelectorAll(".ajl, .aib, .aZ6 aji")[0]
-  // return document.querySelectorAll("div.ajl, div.aib, div.aZ6, div.aji")
-  return document.querySelector('.T0, pp saH2Ef aj3')
+  return document.querySelector("div.wT")
 }
 
 export const getQuickLinks = callback => {
