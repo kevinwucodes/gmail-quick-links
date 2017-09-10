@@ -13,7 +13,10 @@ let pathsToClean = [
 ]
 
 const config = {
-  entry: './src/index.js',
+  entry: {
+    'dev.gmailquicklinks.bundle': './src/index.js',
+    background: './src/background.js'
+  },
   module: {
     rules: [
       {

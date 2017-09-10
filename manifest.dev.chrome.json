@@ -13,6 +13,20 @@
   "author": "Kevin Wu <kevin.wu@gmail.com>",
   "homepage_url": "https://github.com/kevinwucodes/gmail-quick-links",
 
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhWbahShe4OKvw3tHs8V4zB7BF6r47NBMlU164jW2rB7/R57/FdFnW6GHj0cmL0mSR68vpNDBMpTZG/lVpuzm+Vgye/R6zpynmgP2trzsqjoOwWGoFekxMM8hSPrtIltUrU+9pHB5ssZZKYSC7uPajO/9zn/Zb035atAAKddT2r/VY3UuILfKXRQyZrsutjsZ1l8NzB2r0paQS5mwVpMTX8i5H6Oky6AeDyEkkpWvs0VAmo5nOsYyGVF2lIGxeFp3aD7dsNX7R+lfBhicrimHSgv6e/UT0fwHDRy/G18VtrrgZnIrFsRt1HAGUFNaGnymnxvCSFkGAvAXCRNr5rI8iQIDAQAB",
+
+  "oauth2": {
+    "client_id": "971576073269-4rcq28s9ot2ecku2a7q35kgop4bfrcbl.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/oauth2/v3/userinfo"
+    ]
+  },
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
   "content_scripts": [
      {
        "matches": ["https://mail.google.com/*"],
@@ -22,6 +36,8 @@
    ],
 
    "permissions": [
+     "identity",
+     "identity.email",
      "storage"
    ]
 }

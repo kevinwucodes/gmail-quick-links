@@ -68,6 +68,22 @@ const LinkList = ({ linkList = [], onAdd, onDelete }) => {
             onClick={event => onAdd(event)}>
             Add Quick Link
           </div>
+          {/* <div
+            className="QOxrP pU"
+            style={{fontSize:"100%"}}
+            onClick={event => {
+              console.log('clicked get current user')
+
+              chrome.runtime.sendMessage({
+                query: 'getProfileUserInfo'
+              }, function(response) {
+                console.log('comeback', response);
+              })
+
+
+            }}>
+            get current user
+          </div> */}
         </div>
       </div>
     </div>

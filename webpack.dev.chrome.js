@@ -8,7 +8,7 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   output: {
     path: path.resolve(__dirname, 'dev-chrome'),
-    filename: 'dev.gmailquicklinks.bundle.js'
+    filename: '[name].js'
   },
   plugins: [
     new CopyWebpackPlugin([
