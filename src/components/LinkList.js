@@ -23,31 +23,52 @@ const style = {
   }
 }
 
-const renderList = linkList => onDelete => {
-  if (Object.keys(linkList).length === 0) {
+const renderList = linkList => accountList => onDelete => {
+  if (Object.keys(linkList).length === 0 && Object.keys(accountList).length === 0) {
     return (
       <div className="pU" style={{fontSize:"100%", textAlign:"left", cursor: "auto"}}>
         nothing to list: To add one, enter a gmail search and click "Add Quick Link" to create a quick list
       </div>
     )
   } else {
-    return (
-      Object.keys(linkList).map(key => {
+
+    const linksArray = Object
+      .keys(linkList)
+      .map(key => {
         const { urlHash } = linkList[key]
         return (
           <Link
             key={key}
+            type="global"
             name={key}
             urlHash={urlHash}
             onDelete={name => onDelete(name)}
           />
         )
       })
+
+      const accountArray = Object
+        .keys(accountList)
+        .map(key => {
+          const { urlHash } = accountList[key]
+          return (
+            <Link
+              key={key}
+              type={"account"}
+              name={key}
+              urlHash={urlHash}
+              onDelete={name => onDelete(name)}
+            />
+          )
+        })
+
+    return (
+      linksArray.concat(accountArray)
     )
   }
 }
 
-const LinkList = ({ linkList = [], onAdd, onDelete }) => {
+const LinkList = ({ linkList = {}, accountList = {}, onAdd, onDelete }) => {
   return (
     <div className="ApVoH">
 
@@ -60,7 +81,7 @@ const LinkList = ({ linkList = [], onAdd, onDelete }) => {
       <div id="listContainer">
         <div className="pt">
           <div className="pn" style={style.list}>
-            { renderList(linkList)(onDelete) }
+            { renderList(linkList)(accountList)(onDelete) }
           </div>
           <div
             className="QOxrP pU"

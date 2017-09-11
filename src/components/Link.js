@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Link = ({ name, urlHash, onClickLink, onDelete }) => {
+const Link = ({ type, name, urlHash, onClickLink, onDelete }) => {
   return (
     <div className="pm">
       <a
@@ -8,8 +8,13 @@ const Link = ({ name, urlHash, onClickLink, onDelete }) => {
           color: getComputedStyle(document.getElementsByClassName("pU")[0]).color
         }}
         className="po"
-        href={urlHash}>
-        {name}
+        href={urlHash}
+      >
+        {
+          (type === "global")
+            ? 'g - ' + name
+            : name
+        }
       </a>
       <span
         className="pl"
