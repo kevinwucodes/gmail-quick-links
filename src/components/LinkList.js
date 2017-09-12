@@ -42,7 +42,8 @@ const renderList = linkList => accountList => onDelete => {
             type="global"
             name={key}
             urlHash={urlHash}
-            onDelete={name => onDelete(name)}
+            onDelete={() => onDelete('global', key)}
+            onClickGlobeCircle={() => console.log('clicked global', key)}
           />
         )
       })
@@ -54,10 +55,11 @@ const renderList = linkList => accountList => onDelete => {
           return (
             <Link
               key={key}
-              type={"account"}
+              type="account"
               name={key}
               urlHash={urlHash}
-              onDelete={name => onDelete(name)}
+              onDelete={() => onDelete('account', key)}
+              onClickGlobeCircle={() => console.log('clicked account', key)}
             />
           )
         })

@@ -85,7 +85,29 @@ export const addQuickLink = (accountName, name, urlHash ) => {
   })
 }
 
-export const removeLink = (accountName, name) => {
+// export const toggleLink = (type, name, accountName) => {
+//   if (type === 'global') {
+//     // then make it NOT global
+//     getQuickLinks(dataset => {
+//
+//     })
+//   } else {
+//     // else make it global
+//   }
+//
+// }
+
+export const removeGlobalLink = name => {
+  getQuickLinks(item => {
+    // removes the 'name' ES7 style!
+    const { [name]: deleted, ...links } = item.linkList
+    storage.sync.set({
+      linkList: links
+    })
+  })
+}
+
+export const removeAccountLink = (accountName, name) => {
   getQuickLinks(dataset => {
 
     // removes the 'name' ES7 style!

@@ -1,8 +1,21 @@
 import React from 'react'
 
-const Link = ({ type, name, urlHash, onClickLink, onDelete }) => {
+const renderGlobeCircle = type => onClickGlobeCircle => {
   return (
-    <div className="pm">
+    <span
+      className={'glyph ' + ((type == 'global') ? 'global' : 'circle')}
+      onClick={event => onClickGlobeCircle()}
+    />
+  )
+}
+
+const Link = ({ type, name, urlHash, onClickLink, onDelete, onClickGlobeCircle }) => {
+  return (
+    <div
+      style={{
+        paddingBottom: "1px"
+      }}
+      className="pm">
       <a
         style={{
           color: getComputedStyle(document.getElementsByClassName("pU")[0]).color
@@ -17,15 +30,12 @@ const Link = ({ type, name, urlHash, onClickLink, onDelete }) => {
         }
       </a>
       <span
-        className="pl"
-        style={{
-          float: "right",
-          cursor: "pointer",
-          color: getComputedStyle(document.getElementsByClassName("pU")[0]).color
-        }}
-        onClick={event => onDelete(name)}>
-        x
-      </span>
+        className="glyph delete"
+        onClick={event => onDelete()}
+      />
+      {
+        renderGlobeCircle(type)(onClickGlobeCircle)
+      }
     </div>
   )
 }

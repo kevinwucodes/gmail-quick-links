@@ -21,6 +21,9 @@ module.exports = merge(common, {
       },{
         from: './src/assets/icon48.png',
         to: './assets/icon48.png'
+      },{
+        from: './src/default.css',
+        to: './default.css'
       }
     ]),
   ]

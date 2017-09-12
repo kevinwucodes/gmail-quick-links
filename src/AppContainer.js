@@ -5,7 +5,8 @@ import {
   storage,
   getQuickLinks,
   addQuickLink,
-  removeLink,
+  removeGlobalLink,
+  removeAccountLink,
   GMAIL_QUICK_LINKS_NAME
 } from './config'
 
@@ -80,7 +81,13 @@ class AppContainer extends React.Component {
           linkList={linkList}
           accountList={accountList[accountName]}
           onAdd={this.onAdd}
-          onDelete={name => removeLink(accountName, name)}
+          onDelete={(type, name) => {
+            if (type === 'global') {
+              removeGlobalLink(name)
+            } else {
+              removeAccountLink(accountName, name)
+            }
+          }}
         />
       </div>
     )
