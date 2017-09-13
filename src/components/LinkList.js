@@ -23,7 +23,12 @@ const style = {
   }
 }
 
-const renderList = linkList => accountList => onDelete => {
+const renderList = linkList => accountList => onDelete => onClickGlobeCircle => {
+
+  const _onDelete = (type, key) => () => onDelete(type, key)
+  const _onClickGlobeCircle = (type, key) => () => onClickGlobeCircle(type, key)
+
+
   if (Object.keys(linkList).length === 0 && Object.keys(accountList).length === 0) {
     return (
       <div className="pU" style={{fontSize:"100%", textAlign:"left", cursor: "auto"}}>
@@ -42,8 +47,8 @@ const renderList = linkList => accountList => onDelete => {
             type="global"
             name={key}
             urlHash={urlHash}
-            onDelete={() => onDelete('global', key)}
-            onClickGlobeCircle={() => console.log('clicked global', key)}
+            onDelete={_onDelete('global', key)}
+            onClickGlobeCircle={_onClickGlobeCircle('global', key)}
           />
         )
       })
@@ -58,8 +63,8 @@ const renderList = linkList => accountList => onDelete => {
               type="account"
               name={key}
               urlHash={urlHash}
-              onDelete={() => onDelete('account', key)}
-              onClickGlobeCircle={() => console.log('clicked account', key)}
+              onDelete={_onDelete('account', key)}
+              onClickGlobeCircle={_onClickGlobeCircle('account', key)}
             />
           )
         })
@@ -70,7 +75,13 @@ const renderList = linkList => accountList => onDelete => {
   }
 }
 
-const LinkList = ({ linkList = {}, accountList = {}, onAdd, onDelete }) => {
+const LinkList = ({
+  linkList = {},
+  accountList = {},
+  onAdd,
+  onDelete,
+  onClickGlobeCircle
+}) => {
   return (
     <div className="ApVoH">
 
@@ -83,7 +94,7 @@ const LinkList = ({ linkList = {}, accountList = {}, onAdd, onDelete }) => {
       <div id="listContainer">
         <div className="pt">
           <div className="pn" style={style.list}>
-            { renderList(linkList)(accountList)(onDelete) }
+            { renderList(linkList)(accountList)(onDelete)(onClickGlobeCircle) }
           </div>
           <div
             className="QOxrP pU"

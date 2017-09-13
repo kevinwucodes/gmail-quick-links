@@ -10,7 +10,7 @@ span.global {
   background-repeat: no-repeat;
   float: right;
   cursor: pointer;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 span.delete {
@@ -19,7 +19,7 @@ span.delete {
   background-repeat: no-repeat;
   float: right;
   cursor: pointer;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 span.circle {

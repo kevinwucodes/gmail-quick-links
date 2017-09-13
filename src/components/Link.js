@@ -23,11 +23,7 @@ const Link = ({ type, name, urlHash, onClickLink, onDelete, onClickGlobeCircle }
         className="po"
         href={urlHash}
       >
-        {
-          (type === "global")
-            ? 'g - ' + name
-            : name
-        }
+        {name}
       </a>
       <span
         className="glyph delete"

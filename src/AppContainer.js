@@ -7,6 +7,7 @@ import {
   addQuickLink,
   removeGlobalLink,
   removeAccountLink,
+  toggleLink,
   GMAIL_QUICK_LINKS_NAME
 } from './config'
 
@@ -87,6 +88,9 @@ class AppContainer extends React.Component {
             } else {
               removeAccountLink(accountName, name)
             }
+          }}
+          onClickGlobeCircle={(type, name) => {
+            toggleLink(type, name, accountName)
           }}
         />
       </div>

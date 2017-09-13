@@ -85,17 +85,34 @@ export const addQuickLink = (accountName, name, urlHash ) => {
   })
 }
 
-// export const toggleLink = (type, name, accountName) => {
-//   if (type === 'global') {
-//     // then make it NOT global
-//     getQuickLinks(dataset => {
-//
-//     })
-//   } else {
-//     // else make it global
-//   }
-//
-// }
+export const toggleLink = (type, name, accountName) => {
+  if (type === 'global') {
+    // then make it NOT global
+    getQuickLinks(dataset => {
+      const { urlHash } = dataset.linkList[name]
+      addQuickLink(accountName, name, urlHash)
+      removeGlobalLink(name)
+    })
+  } else {
+    // else make it global
+    getQuickLinks(dataset => {
+      const { urlHash } = dataset.accountList[accountName][name]
+
+      // remove the local account
+      removeAccountLink(accountName, name)
+
+      // now add it globally
+      storage.sync.set({
+        linkList: {
+          ...dataset.linkList,
+          [name]: {
+            urlHash
+          }
+        }
+      })
+    })
+  }
+}
 
 export const removeGlobalLink = name => {
   getQuickLinks(item => {
