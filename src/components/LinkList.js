@@ -75,6 +75,22 @@ const renderList = linkList => accountList => onDelete => onClickGlobeCircle => 
   }
 }
 
+const displayHelp = () => {
+  const message = `
+To use Quick Links:
+
+1) perform a gmail search
+2) click on "Add Quick Link" to give a name for that search
+
+By default, all quick links are specific to the account where they were created.  If you have multiple gmail accounts logged in simultaneously, creating a quick link would only be visible for that account.
+
+You may choose to have quick links available for multiple gmail accounts by clicking on the yellow sphere which then toggles to a globe icon.  A quick link with a globe icon will now show up in every gmail account you are logged in.  Clicking on the globe again will change that quick link back to a specific account quick link.
+
+If you do not have multiple gmail accounts, toggling between the yellow sphere and the globe does nothing.
+`
+  alert(message)
+}
+
 const LinkList = ({
   linkList = {},
   accountList = {},
@@ -87,6 +103,11 @@ const LinkList = ({
 
       <div className="r">
         <div className="pv" style={style.quick}>
+          <span
+            className="glyph info"
+            onClick={displayHelp}
+            >
+          </span>
           <h2 className="pw">Quick Links</h2>
         </div>
       </div>

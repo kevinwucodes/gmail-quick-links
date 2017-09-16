@@ -30,3 +30,11 @@ span.circle {
   cursor: pointer;
   margin-left: 10px;
 }
+
+span.info {
+  /*https://icons8.com/icon/34698/information*/
+  background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABEUlEQVQ4T2NkwAMCKrYrgKQ3dHg+wKWMEZdEQu/xSaKiouEg+devX69cUGyZh00tTgOypp6/rKikqAPSdP/e/SvTsg11STIguf/kCQ0NdXOQphs3bp6cW2huQZIBEW0HbDnY2KpBmn78+tW6osrhMFEGgAKOi5+znuE/03+4BiaGXcsq7FYQZYBPxWYHFRXl/Xz8/Ay8PNxgPc+eP1/Yn6SZQJQBAQ37Bf78+GIgIytToKyk6E+yATBbCuddXyAlKRk/agAZYQBLB9xcPAZqaioGoEC8devOha9fv53/9ulrE3rGwsgLsHTAzQ1JAzDw9etXhjt37jpu6fA9gCyOYQAsHWBLNCwcPBc2NDh+QJYDAC3ziRELKKRTAAAAAElFTkSuQmCC");
+  background-repeat: no-repeat;
+  float: left;
+  cursor: pointer;
+}
