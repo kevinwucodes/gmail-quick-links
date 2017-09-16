@@ -4,6 +4,7 @@ const renderGlobeCircle = type => onClickGlobeCircle => {
   return (
     <span
       className={'glyph ' + ((type == 'global') ? 'global' : 'circle')}
+      title="toggle global/single"
       onClick={event => onClickGlobeCircle()}
     />
   )
@@ -21,12 +22,14 @@ const Link = ({ type, name, urlHash, onClickLink, onDelete, onClickGlobeCircle }
           color: getComputedStyle(document.getElementsByClassName("pU")[0]).color
         }}
         className="po"
+        title={urlHash}
         href={urlHash}
       >
         {name}
       </a>
       <span
         className="glyph delete"
+        title="delete"
         onClick={event => onDelete()}
       />
       {

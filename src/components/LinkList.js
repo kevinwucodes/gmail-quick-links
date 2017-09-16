@@ -105,6 +105,7 @@ const LinkList = ({
         <div className="pv" style={style.quick}>
           <span
             className="glyph info"
+            title="info/help"
             onClick={displayHelp}
             >
           </span>
@@ -120,6 +121,7 @@ const LinkList = ({
           <div
             className="QOxrP pU"
             style={{fontSize:"100%"}}
+            title="Add Quick Link"
             onClick={event => onAdd(event)}>
             Add Quick Link
           </div>
