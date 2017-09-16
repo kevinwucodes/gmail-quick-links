@@ -5,9 +5,9 @@ import AppContainer from './AppContainer'
 
 import { getGmailLocationToInject } from './config'
 
-const beginReact = () => {
+const beginReact = accountName => {
   render(
-    <AppContainer />,
+    <AppContainer accountName={accountName}/>,
     document.getElementById('gmailQuickLinksContainer')
   )
 }
@@ -25,7 +25,13 @@ const checkDomElementExist = setInterval(() => {
 
     console.log('Loaded Gmail Quick Links')
 
+    //TODO: what is the person isn't signed in?  Does this crash extension?
+    const currentAccountName = document
+      .querySelectorAll('a[title^="Google Account"]')[0]
+      .title
+      .match(/\(([^)]+)\)/)[1]
+
     //load react
-    beginReact()
+    beginReact(currentAccountName)
   }
 }, 200)

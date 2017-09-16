@@ -23,36 +23,92 @@ const style = {
   }
 }
 
-const renderList = linkList => onDelete => {
-  if (Object.keys(linkList).length === 0) {
+const renderList = linkList => accountList => onDelete => onClickGlobeCircle => {
+
+  const _onDelete = (type, key) => () => onDelete(type, key)
+  const _onClickGlobeCircle = (type, key) => () => onClickGlobeCircle(type, key)
+
+
+  if (Object.keys(linkList).length === 0 && Object.keys(accountList).length === 0) {
     return (
       <div className="pU" style={{fontSize:"100%", textAlign:"left", cursor: "auto"}}>
         nothing to list: To add one, enter a gmail search and click "Add Quick Link" to create a quick list
       </div>
     )
   } else {
-    return (
-      Object.keys(linkList).map(key => {
+
+    const linksArray = Object
+      .keys(linkList)
+      .map(key => {
         const { urlHash } = linkList[key]
         return (
           <Link
             key={key}
+            type="global"
             name={key}
             urlHash={urlHash}
-            onDelete={name => onDelete(name)}
+            onDelete={_onDelete('global', key)}
+            onClickGlobeCircle={_onClickGlobeCircle('global', key)}
           />
         )
       })
+
+      const accountArray = Object
+        .keys(accountList)
+        .map(key => {
+          const { urlHash } = accountList[key]
+          return (
+            <Link
+              key={key}
+              type="account"
+              name={key}
+              urlHash={urlHash}
+              onDelete={_onDelete('account', key)}
+              onClickGlobeCircle={_onClickGlobeCircle('account', key)}
+            />
+          )
+        })
+
+    return (
+      linksArray.concat(accountArray)
     )
   }
 }
 
-const LinkList = ({ linkList = [], onAdd, onDelete }) => {
+const displayHelp = () => {
+  const message = `
+To use Quick Links:
+
+1) perform a gmail search
+2) click on "Add Quick Link" to give a name for that search
+
+By default, all quick links are specific to the account where they were created.  If you have multiple gmail accounts logged in simultaneously, creating a quick link would only be visible for that account.
+
+You may choose to have quick links available for multiple gmail accounts by clicking on the yellow sphere which then toggles to a globe icon.  A quick link with a globe icon will now show up in every gmail account you are logged in.  Clicking on the globe again will change that quick link back to a specific account quick link.
+
+If you do not have multiple gmail accounts, toggling between the yellow sphere and the globe does nothing.
+`
+  alert(message)
+}
+
+const LinkList = ({
+  linkList = {},
+  accountList = {},
+  onAdd,
+  onDelete,
+  onClickGlobeCircle
+}) => {
   return (
     <div className="ApVoH">
 
       <div className="r">
         <div className="pv" style={style.quick}>
+          <span
+            className="glyph info"
+            title="info/help"
+            onClick={displayHelp}
+            >
+          </span>
           <h2 className="pw">Quick Links</h2>
         </div>
       </div>
@@ -60,11 +116,12 @@ const LinkList = ({ linkList = [], onAdd, onDelete }) => {
       <div id="listContainer">
         <div className="pt">
           <div className="pn" style={style.list}>
-            { renderList(linkList)(onDelete) }
+            { renderList(linkList)(accountList)(onDelete)(onClickGlobeCircle) }
           </div>
           <div
             className="QOxrP pU"
             style={{fontSize:"100%"}}
+            title="Add Quick Link"
             onClick={event => onAdd(event)}>
             Add Quick Link
           </div>

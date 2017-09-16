@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Gmail Quick Links",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "description": "a replacement for Gmail Quick Links",
   "short_name": "Gmail Links",
   "icons": {
@@ -16,6 +16,7 @@
   "content_scripts": [
      {
        "matches": ["https://mail.google.com/*"],
+       "css": ["default.css"],
        "js": ["dist.gmailquicklinks.bundle.js"],
        "run_at": "document_idle"
      }

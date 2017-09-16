@@ -5,7 +5,9 @@ import {
   storage,
   getQuickLinks,
   addQuickLink,
-  removeLink,
+  removeGlobalLink,
+  removeAccountLink,
+  toggleLink,
   GMAIL_QUICK_LINKS_NAME
 } from './config'
 
@@ -17,7 +19,12 @@ class AppContainer extends React.Component {
     this.state = {
       name: "",
       version: "",
-      linkList: {}
+
+      //global
+      linkList: {},
+
+      //accountList contains all accounts, with nested lists in each account
+      accountList: {}
     }
   }
 
@@ -25,29 +32,33 @@ class AppContainer extends React.Component {
     const {
       name = GMAIL_QUICK_LINKS_NAME.name,
       version = GMAIL_QUICK_LINKS_NAME.version,
-      linkList = []
+      linkList = {},
+      accountList = {}
     } = gql
 
     this.setState((prevState, props) => {
       return {
         name,
         version,
-        linkList
+        linkList,
+        accountList
       }
     })
   }
 
   onAdd(event) {
     event.preventDefault()
+    const { accountName } = this.props
     //TODO: do we use location.hash?  or something else?
     const urlHash = location.hash
     const name = prompt(`Enter title for current view [${urlHash.substring(1)}]`, urlHash.substring(1))
 
     if (name) {
-      addQuickLink({
+      addQuickLink(
+        accountName,
         name,
         urlHash
-      })
+      )
     }
   }
 
@@ -63,13 +74,24 @@ class AppContainer extends React.Component {
   }
 
   render() {
-    const { linkList } = this.state
+    const { linkList, accountList } = this.state
+    const { accountName } = this.props
     return (
       <div id={GMAIL_QUICK_LINKS_NAME.divId}>
         <LinkList
           linkList={linkList}
+          accountList={accountList[accountName]}
           onAdd={this.onAdd}
-          onDelete={name => removeLink(name)}
+          onDelete={(type, name) => {
+            if (type === 'global') {
+              removeGlobalLink(name)
+            } else {
+              removeAccountLink(accountName, name)
+            }
+          }}
+          onClickGlobeCircle={(type, name) => {
+            toggleLink(type, name, accountName)
+          }}
         />
       </div>
     )
