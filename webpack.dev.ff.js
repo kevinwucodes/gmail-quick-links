@@ -21,6 +21,15 @@ module.exports = merge(common, {
       },{
         from: './src/assets/icon48.png',
         to: './assets/icon48.png'
+      },{
+        from: './src/default.css',
+        to: './default.css'
+      },{
+        from: './node_modules/react/dist/react.js',
+        to: './react.js'
+      }, {
+        from: './node_modules/react-dom/dist/react-dom.js',
+        to: './react-dom.js'
       }
     ]),
   ]

@@ -16,7 +16,12 @@
   "content_scripts": [
      {
        "matches": ["https://mail.google.com/*"],
-       "js": ["dev.gmailquicklinks.bundle.js"],
+       "css": ["default.css"],
+       "js": [
+         "react.js",
+         "react-dom.js",
+         "dev.gmailquicklinks.bundle.js"
+       ],
        "run_at": "document_idle"
      }
    ],

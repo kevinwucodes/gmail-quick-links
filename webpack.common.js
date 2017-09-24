@@ -23,6 +23,12 @@ const config = {
       }
     ]
   },
+
+  externals: {
+    react: "React",
+    'react-dom': "ReactDOM"
+  },
+
   plugins: [
     new CleanWebpackPlugin(pathsToClean),
 
