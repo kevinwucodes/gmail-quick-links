@@ -31,7 +31,7 @@ const renderList = linkList => accountList => onDelete => onClickGlobeCircle => 
 
   if (Object.keys(linkList).length === 0 && Object.keys(accountList).length === 0) {
     return (
-      <div className="pU" style={{fontSize:"100%", textAlign:"left", cursor: "auto"}}>
+      <div className="n0" style={{fontSize:"100%", textAlign:"left", cursor: "auto"}}>
         nothing to list: To add one, enter a gmail search and click "Add Quick Link" to create a quick list
       </div>
     )
