@@ -30,6 +30,8 @@
      "storage"
    ],
 
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhWbahShe4OKvw3tHs8V4zB7BF6r47NBMlU164jW2rB7/R57/FdFnW6GHj0cmL0mSR68vpNDBMpTZG/lVpuzm+Vgye/R6zpynmgP2trzsqjoOwWGoFekxMM8hSPrtIltUrU+9pHB5ssZZKYSC7uPajO/9zn/Zb035atAAKddT2r/VY3UuILfKXRQyZrsutjsZ1l8NzB2r0paQS5mwVpMTX8i5H6Oky6AeDyEkkpWvs0VAmo5nOsYyGVF2lIGxeFp3aD7dsNX7R+lfBhicrimHSgv6e/UT0fwHDRy/G18VtrrgZnIrFsRt1HAGUFNaGnymnxvCSFkGAvAXCRNr5rI8iQIDAQAB",
+
    "applications": {
      "gecko": {
        "id": "GmailQuickLinks-bf01c022-b064-4fc1-b198-f43d8cbe6ed4@example.com"

@@ -6,8 +6,8 @@ const path = require('path')
 
 module.exports = args => {
 
-  const outputDir = (args && args.env && args.env == "development") ? 'dev-ff' : 'dist-ff'
-  const manifestFile = (args && args.env && args.env == "development") ? './manifest.dev.ff.json' : './manifest.dist.json'
+  const outputDir = (args && args.env && args.env == "development") ? 'dev' : 'dist'
+  const manifestFile = (args && args.env && args.env == "development") ? './manifest.dev.json' : './manifest.dist.json'
   const bundleType = (args && args.env && args.env == "development") ? 'dev' : 'dist'
 
   return merge(common, {

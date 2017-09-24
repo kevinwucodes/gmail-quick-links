@@ -9,15 +9,10 @@
   ],
   "main": "index.js",
   "scripts": {
-    "dev:ff": "npm run webpack -- --env.env development",
-    "dist:ff": "npm run webpack -- --env.env production",
+    "dev": "npm run webpack -- --env.env development",
+    "dist": "npm run webpack -- --env.env production",
 
-    "webpack": "webpack --config webpack.js --watch",
-
-
-    "dev:chrome": "webpack --config webpack.dev.chrome.js --watch",
-
-    "dist:chrome": "webpack --config webpack.dist.chrome.js"
+    "webpack": "webpack --config webpack.js --watch"
   },
   "author": "Kevin Wu <kevin.wu@gmail.com>",
   "homepage": "https://github.com/kevinwucodes/gmail-quick-links",
