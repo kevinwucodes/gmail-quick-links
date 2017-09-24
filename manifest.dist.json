@@ -17,7 +17,11 @@
      {
        "matches": ["https://mail.google.com/*"],
        "css": ["default.css"],
-       "js": ["dist.gmailquicklinks.bundle.js"],
+       "js": [
+         "react.js",
+         "react-dom.js",
+         "dist.gmailquicklinks.bundle.js"
+       ],
        "run_at": "document_idle"
      }
    ],

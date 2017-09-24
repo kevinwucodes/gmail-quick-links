@@ -9,9 +9,14 @@
   ],
   "main": "index.js",
   "scripts": {
-    "dev:ff": "webpack --config webpack.dev.ff.js --watch",
+    "dev:ff": "npm run webpack -- --env.env development",
+    "dist:ff": "npm run webpack -- --env.env production",
+
+    "webpack": "webpack --config webpack.js --watch",
+
+
     "dev:chrome": "webpack --config webpack.dev.chrome.js --watch",
-    "dist:ff": "webpack --config webpack.dist.ff.js",
+
     "dist:chrome": "webpack --config webpack.dist.chrome.js"
   },
   "author": "Kevin Wu <kevin.wu@gmail.com>",
