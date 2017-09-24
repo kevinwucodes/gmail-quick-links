@@ -1,6 +1,6 @@
 # Gmail Quick Links
 
-A Chrome Extension / ~~Firefox Add-on~~ to replace the existing Gmail Quick Links currently found in Gmail Experimental Labs that Google is [retiring](https://gsuiteupdates.googleblog.com/2017/03/updates-in-g-suite-to-streamline-hangouts-and-gmail.html).
+A Chrome Extension / Firefox Add-on to replace the existing Gmail Quick Links currently found in Gmail Experimental Labs that Google is [retiring](https://gsuiteupdates.googleblog.com/2017/03/updates-in-g-suite-to-streamline-hangouts-and-gmail.html).
 
 Supports multiple logged-in gmail accounts, with ability to create quick links that work across all logged-in accounts or a quick link that is specific to one account.
 
@@ -14,8 +14,9 @@ You could run this extension alongside the original Dan P. Gmail Labs extension,
 
 ### App IDs
 
-**Chrome Extension ID:** ecbkcjeoffcjnppapdlncohmehhnfibd
+**Chrome Extension ID:** (ecbkcjeoffcjnppapdlncohmehhnfibd)
 https://chrome.google.com/webstore/detail/gmail-quick-links/ecbkcjeoffcjnppapdlncohmehhnfibd
 
-(WIP) **Firefox Add-on ID:** bf01c022-b064-4fc1-b198-f43d8cbe6ed4
-~~https://addons.mozilla.org/en-US/firefox/addon/gmail-quick-links~~
+
+**Firefox Add-on ID:** (bf01c022-b064-4fc1-b198-f43d8cbe6ed4)
+https://addons.mozilla.org/en-US/firefox/addon/gmail-quick-links
