@@ -27,7 +27,7 @@ const checkDomElementExist = setInterval(() => {
 
     //TODO: what is the person isn't signed in?  Does this crash extension?
     const currentAccountName = document
-      .querySelectorAll('a[title^="Google Account"]')[0]
+      .querySelectorAll('a[href*="accounts.google.com"]')[0]
       .title
       .match(/\(([^)]+)\)/)[1]
 
