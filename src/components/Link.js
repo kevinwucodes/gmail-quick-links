@@ -35,6 +35,7 @@ const Link = ({ type, name, urlHash, onClickLink, onDelete, onClickGlobeCircle }
       {
         renderGlobeCircle(type)(onClickGlobeCircle)
       }
+      <div className="clear"></div>
     </div>
   )
 }

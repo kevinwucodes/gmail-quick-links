@@ -38,3 +38,7 @@ span.info {
   float: left;
   cursor: pointer;
 }
+
+div.clear {
+  clear: both;
+}
