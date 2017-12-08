@@ -75,9 +75,14 @@ class AppContainer extends React.Component {
 
   render() {
     const { linkList, accountList } = this.state
-    const { accountName } = this.props
+    const { accountName, location } = this.props
+
+    const moreProps = {
+      className: (location === 'widget') ? 'py' : ''
+    }
+
     return (
-      <div id={GMAIL_QUICK_LINKS_NAME.divId}>
+      <div id={GMAIL_QUICK_LINKS_NAME.divId} {...moreProps}>
         <LinkList
           linkList={linkList}
           accountList={accountList[accountName]}

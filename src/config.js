@@ -14,6 +14,9 @@ export const getGmailLocationToInject = () => {
   return document.querySelector("div.wT")
 }
 
+const widgetMainPanel = () => document.querySelector('div.akc.aZ6')
+export const widgetInsidePanel = () => document.querySelector('div.T0.pp.saH2Ef')
+
 /*
 the storage looks something like this:
 
