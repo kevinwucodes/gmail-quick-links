@@ -40,8 +40,6 @@ const checkWidgetPanel = untilStop => {
   const startTime = new Date().getTime()
 
   const intervalId = setInterval(() => {
-    console.log('inside check widget panel')
-
     if (new Date().getTime() - startTime > untilStop * 1000) {
       clearInterval(intervalId)
     }
