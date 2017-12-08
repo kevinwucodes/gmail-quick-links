@@ -1,7 +1,7 @@
 export const GMAIL_QUICK_LINKS_NAME = {
   name: "Gmail Quick Links",
   divId: "gmailQuickLinks",
-  version: "0.2.5"
+  version: "0.2.6"
 }
 
 // this should come out of chrome.storage apis
