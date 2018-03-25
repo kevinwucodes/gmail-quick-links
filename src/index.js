@@ -3,7 +3,13 @@ import { render } from 'react-dom'
 
 import AppContainer from './AppContainer'
 
-import { getGmailLocationToInject, widgetInsidePanel } from './config'
+import {
+  getGmailLocationToInject,
+  widgetInsidePanel,
+  labelControlsContainer,
+  gmailControlsContainer,
+  hambugerMenuContainer
+} from './config'
 
 const GMAIL_QUICK_LINKS_CONTAINER = 'gmailQuickLinksContainer'
 
@@ -22,15 +28,28 @@ const injectReact = location => {
   if (location === 'widget') {
     widgetInsidePanel().append(gmailQuickLinksContainer)
   } else {
-    getGmailLocationToInject().append(gmailQuickLinksContainer)
+    if (isMaterialUi()) {
+      labelControlsContainer().insertAdjacentElement(
+        'beforebegin',
+        gmailQuickLinksContainer
+      )
+    } else {
+      getGmailLocationToInject().append(gmailQuickLinksContainer)
+    }
   }
 
   console.log('Loaded Gmail Quick Links')
 
   //TODO: what is the person isn't signed in?  Does this crash extension?
-  const currentAccountName = document
-    .querySelectorAll('a[href*="accounts.google.com"]')[0]
-    .title.match(/\(([^)]+)\)/)[1]
+  const currentAccountName = isMaterialUi()
+    ? //new gmail ui
+      document
+        .querySelectorAll('a[aria-label*="Google Account"]')[0]
+        .attributes['aria-label'].nodeValue.match(/\(([^)]+)\)/)[1]
+    : //old gmail ui
+      document
+        .querySelectorAll('a[href*="accounts.google.com"]')[0]
+        .title.match(/\(([^)]+)\)/)[1]
 
   //load react
   beginReact(currentAccountName)(location)
@@ -55,11 +74,32 @@ const checkWidgetPanel = untilStop => {
   }, 500)
 }
 
+//is this the new gmail?  do we have an image showing the new gmail ui logo?
+const isMaterialUi = () =>
+  document.getElementsByClassName('gb_1a')[1] ? true : false
+
 // there are cases where the gmail left nav panel isn't loaded yet,
 // so we need to check for it until it exists before we can proceed
 const checkDomElementExist = setInterval(() => {
   if (getGmailLocationToInject()) {
     clearInterval(checkDomElementExist)
+
+    //TODO: if hamburger menu is collapsed, then remove quick links, else show
+    // //add event listener to hamburger menu if it exists
+    // if (hambugerMenuContainer()) {
+    //   document
+    //     .getElementsByClassName('gb_jc')[0]
+    //     .addEventListener('click', () => {
+    //       if (gmailControlsContainer().offsetWidth < 100) {
+    //         document.getElementById(GMAIL_QUICK_LINKS_CONTAINER) &&
+    //           document.getElementById(GMAIL_QUICK_LINKS_CONTAINER).remove()
+    //       } else {
+    //         document.getElementById(GMAIL_QUICK_LINKS_CONTAINER) &&
+    //           document.getElementById(GMAIL_QUICK_LINKS_CONTAINER).remove()
+    //         injectReact()
+    //       }
+    //     })
+    // }
 
     //check the presense of a widget panel for 20 seconds, then stop checking
     checkWidgetPanel(20)
