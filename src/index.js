@@ -44,7 +44,7 @@ const injectReact = location => {
   const currentAccountName = isMaterialUi()
     ? //new gmail ui
       document
-        .querySelectorAll('a[aria-label*="Google Account"]')[0]
+        .querySelectorAll('a[class="gb_b gb_ib gb_R"]')[0]
         .attributes['aria-label'].nodeValue.match(/\(([^)]+)\)/)[1]
     : //old gmail ui
       document
