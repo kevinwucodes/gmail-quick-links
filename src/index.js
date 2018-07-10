@@ -43,9 +43,10 @@ const injectReact = location => {
   //TODO: what is the person isn't signed in?  Does this crash extension?
   const currentAccountName = isMaterialUi()
     ? //new gmail ui
-      document
-        .querySelectorAll('a[class="gb_b gb_ib gb_R"]')[0]
-        .attributes['aria-label'].nodeValue.match(/\(([^)]+)\)/)[1]
+      (
+        document.querySelectorAll('a[class="gb_b gb_ib gb_R"]')[0] ||
+        document.querySelectorAll('a[class="gb_b gb_db gb_R"]')[0]
+      ).attributes['aria-label'].nodeValue.match(/\(([^)]+)\)/)[1]
     : //old gmail ui
       document
         .querySelectorAll('a[href*="accounts.google.com"]')[0]
@@ -76,7 +77,10 @@ const checkWidgetPanel = untilStop => {
 
 //is this the new gmail?  do we have an image showing the new gmail ui logo?
 const isMaterialUi = () =>
-  document.getElementsByClassName('gb_1a')[1] ? true : false
+  document.getElementsByClassName('gb_1a')[1] ||
+  document.getElementsByClassName('gb_Va')[1]
+    ? true
+    : false
 
 // there are cases where the gmail left nav panel isn't loaded yet,
 // so we need to check for it until it exists before we can proceed
