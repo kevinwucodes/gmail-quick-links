@@ -12,11 +12,7 @@ const renderGlobeCircle = type => onClickGlobeCircle => {
 
 const Link = ({ type, name, urlHash, onClickLink, onDelete, onClickGlobeCircle }) => {
   return (
-    <div
-      style={{
-        paddingBottom: "1px"
-      }}
-      className="pm">
+    <div>
       <a
         style={{
           color: getComputedStyle(document.getElementsByClassName("pU")[0]).color
