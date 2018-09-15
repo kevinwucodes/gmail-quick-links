@@ -14,11 +14,6 @@ const style = {
     fontSize: "100%"
   },
   list: {
-    textAlign: "left",
-    fontSize: "100%",
-    background: "none",
-    margin: 0,
-    textDecoration: "none",
     paddingLeft: 30
   }
 }
@@ -115,7 +110,7 @@ const LinkList = ({
 
       <div id="listContainer">
         <div className="pt">
-          <div className="pn" style={style.list}>
+          <div style={style.list}>
             { renderList(linkList)(accountList)(onDelete)(onClickGlobeCircle) }
           </div>
           <div
