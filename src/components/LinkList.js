@@ -16,10 +16,10 @@ const style = {
   list: {
     paddingLeft: 30
   },
-  title-container: {
+  titleContainer: {
     display: flex;
-    align-items: baseline;
-    justify-content: space-between;
+    alignItems: baseline;
+    justifyContent: space-between;
   }
 }
 
@@ -101,7 +101,7 @@ const LinkList = ({
   return (
     <div className="ApVoH">
 
-      <div className="r" style={style.title-container}>
+      <div className="r" style={style.titleContainer}>
         <div className="pv" style={style.quick}>
           <span
             className="glyph info"
