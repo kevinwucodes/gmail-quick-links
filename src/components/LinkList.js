@@ -15,6 +15,11 @@ const style = {
   },
   list: {
     paddingLeft: 30
+  },
+  titleContainer: {
+    display: flex;
+    alignItems: baseline;
+    justifyContent: space-between;
   }
 }
 
@@ -96,7 +101,7 @@ const LinkList = ({
   return (
     <div className="ApVoH">
 
-      <div className="r">
+      <div className="r" style={style.titleContainer}>
         <div className="pv" style={style.quick}>
           <span
             className="glyph info"
@@ -106,19 +111,19 @@ const LinkList = ({
           </span>
           <h2 className="pw">Quick Links</h2>
         </div>
+        <div
+          className="QOxrP pU"
+          style={{fontSize:"100%", textDecoration: "underline"}}
+          title="Add Quick Link"
+          onClick={event => onAdd(event)}>
+          Add
+        </div>
       </div>
 
       <div id="listContainer">
         <div className="pt">
           <div style={style.list}>
             { renderList(linkList)(accountList)(onDelete)(onClickGlobeCircle) }
-          </div>
-          <div
-            className="QOxrP pU"
-            style={{fontSize:"100%", textDecoration: "underline"}}
-            title="Add Quick Link"
-            onClick={event => onAdd(event)}>
-            Add Quick Link
           </div>
         </div>
       </div>
