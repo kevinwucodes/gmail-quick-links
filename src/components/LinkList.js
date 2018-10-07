@@ -17,9 +17,9 @@ const style = {
     paddingLeft: 30
   },
   titleContainer: {
-    display: flex;
-    alignItems: baseline;
-    justifyContent: space-between;
+    display: "flex",
+    alignItems: "baseline",
+    justifyContent: "space-between"
   }
 }
 
