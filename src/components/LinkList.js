@@ -78,7 +78,7 @@ const displayHelp = () => {
 To use Quick Links:
 
 1) perform a gmail search
-2) click on "Add Quick Link" to give a name for that search
+2) click on "Add" to give a name for that search
 
 By default, all quick links are specific to the account where they were created.  If you have multiple gmail accounts logged in simultaneously, creating a quick link would only be visible for that account.
 
