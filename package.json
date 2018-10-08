@@ -10,7 +10,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "npm run webpack -- --env.env development",
-    "dist": "npm run webpack -- --env.env production",
+    "build": "npm run webpack -- --env.env production",
     "webpack": "webpack --config webpack.js --watch"
   },
   "author": "Kevin Wu <kevin.wu@gmail.com>",
