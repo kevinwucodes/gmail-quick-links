@@ -97,8 +97,7 @@ const LinkList = ({
   onClickGlobeCircle
 }) => {
   return (
-    <div className="ApVoH">
-
+    <div>
       <div className="r" style={style.titleContainer}>
         <div className="pv" style={style.quick}>
           <span
@@ -109,8 +108,8 @@ const LinkList = ({
           <h2 className="pw">Quick Links</h2>
         </div>
         <div
-          className="QOxrP pU"
-          style={{fontSize:"100%", textDecoration: "underline"}}
+          className="pU"
+          style={{ fontSize: '100%', textDecoration: 'underline' }}
           title="Add Quick Link"
           onClick={event => onAdd(event)}
         >
