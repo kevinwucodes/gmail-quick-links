@@ -99,7 +99,7 @@ const LinkList = ({
   return (
     <div>
       <div className="r" style={style.titleContainer}>
-        <div className="pv" style={style.quick}>
+        <div style={style.quick}>
           <span
             className="glyph info"
             title="info/help"
@@ -118,10 +118,8 @@ const LinkList = ({
       </div>
 
       <div id="listContainer">
-        <div className="pt">
-          <div style={style.list}>
-            {renderList(linkList)(accountList)(onDelete)(onClickGlobeCircle)}
-          </div>
+        <div style={style.list}>
+          {renderList(linkList)(accountList)(onDelete)(onClickGlobeCircle)}
         </div>
       </div>
     </div>
