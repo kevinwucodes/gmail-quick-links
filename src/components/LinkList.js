@@ -3,75 +3,73 @@ import Link from './Link'
 
 const style = {
   small: {
-    fontSize: "80%"
+    fontSize: '80%'
   },
   quick: {
-    cursor: "auto",
-    position: "relative",
-    overflow: "hidden",
-    verticalAlign: "middle",
-    outline: "none",
-    fontSize: "100%"
+    cursor: 'auto',
+    position: 'relative',
+    overflow: 'hidden',
+    verticalAlign: 'middle',
+    outline: 'none',
+    fontSize: '100%'
   },
   list: {
     paddingLeft: 30
   },
   titleContainer: {
-    display: "flex",
-    alignItems: "baseline",
-    justifyContent: "space-between"
+    display: 'flex',
+    alignItems: 'baseline',
+    justifyContent: 'space-between'
   }
 }
 
 const renderList = linkList => accountList => onDelete => onClickGlobeCircle => {
-
   const _onDelete = (type, key) => () => onDelete(type, key)
   const _onClickGlobeCircle = (type, key) => () => onClickGlobeCircle(type, key)
 
-
-  if (Object.keys(linkList).length === 0 && Object.keys(accountList).length === 0) {
+  if (
+    Object.keys(linkList).length === 0 &&
+    Object.keys(accountList).length === 0
+  ) {
     return (
-      <div className="n0" style={{fontSize:"100%", textAlign:"left", cursor: "auto"}}>
-        nothing to list: To add one, enter a gmail search and click "Add" to create a quick list
+      <div
+        className="n0"
+        style={{ fontSize: '100%', textAlign: 'left', cursor: 'auto' }}
+      >
+        nothing to list: To add one, enter a gmail search and click "Add" to
+        create a quick list
       </div>
     )
   } else {
+    const linksArray = Object.keys(linkList).map(key => {
+      const { urlHash } = linkList[key]
+      return (
+        <Link
+          key={key}
+          type="global"
+          name={key}
+          urlHash={urlHash}
+          onDelete={_onDelete('global', key)}
+          onClickGlobeCircle={_onClickGlobeCircle('global', key)}
+        />
+      )
+    })
 
-    const linksArray = Object
-      .keys(linkList)
-      .map(key => {
-        const { urlHash } = linkList[key]
-        return (
-          <Link
-            key={key}
-            type="global"
-            name={key}
-            urlHash={urlHash}
-            onDelete={_onDelete('global', key)}
-            onClickGlobeCircle={_onClickGlobeCircle('global', key)}
-          />
-        )
-      })
+    const accountArray = Object.keys(accountList).map(key => {
+      const { urlHash } = accountList[key]
+      return (
+        <Link
+          key={key}
+          type="account"
+          name={key}
+          urlHash={urlHash}
+          onDelete={_onDelete('account', key)}
+          onClickGlobeCircle={_onClickGlobeCircle('account', key)}
+        />
+      )
+    })
 
-      const accountArray = Object
-        .keys(accountList)
-        .map(key => {
-          const { urlHash } = accountList[key]
-          return (
-            <Link
-              key={key}
-              type="account"
-              name={key}
-              urlHash={urlHash}
-              onDelete={_onDelete('account', key)}
-              onClickGlobeCircle={_onClickGlobeCircle('account', key)}
-            />
-          )
-        })
-
-    return (
-      linksArray.concat(accountArray)
-    )
+    return linksArray.concat(accountArray)
   }
 }
 
@@ -107,15 +105,15 @@ const LinkList = ({
             className="glyph info"
             title="info/help"
             onClick={displayHelp}
-            >
-          </span>
+          />
           <h2 className="pw">Quick Links</h2>
         </div>
         <div
           className="QOxrP pU"
           style={{fontSize:"100%", textDecoration: "underline"}}
           title="Add Quick Link"
-          onClick={event => onAdd(event)}>
+          onClick={event => onAdd(event)}
+        >
           Add
         </div>
       </div>
@@ -123,7 +121,7 @@ const LinkList = ({
       <div id="listContainer">
         <div className="pt">
           <div style={style.list}>
-            { renderList(linkList)(accountList)(onDelete)(onClickGlobeCircle) }
+            {renderList(linkList)(accountList)(onDelete)(onClickGlobeCircle)}
           </div>
         </div>
       </div>
