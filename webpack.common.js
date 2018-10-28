@@ -2,10 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 // the path(s) that should be cleaned
-let pathsToClean = [
-  'dev',
-  'dist'
-]
+let pathsToClean = ['dev', 'dist']
 
 const config = {
   entry: './src/index.js',
@@ -14,14 +11,14 @@ const config = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: 'babel-loader'
       }
     ]
   },
 
   externals: {
-    react: "React",
-    'react-dom': "ReactDOM"
+    react: 'React',
+    'react-dom': 'ReactDOM'
   },
 
   plugins: [

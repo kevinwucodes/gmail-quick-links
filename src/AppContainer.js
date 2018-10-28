@@ -17,8 +17,8 @@ class AppContainer extends React.Component {
     this.buildList = this.buildList.bind(this)
     this.onAdd = this.onAdd.bind(this)
     this.state = {
-      name: "",
-      version: "",
+      name: '',
+      version: '',
 
       //global
       linkList: {},
@@ -48,17 +48,16 @@ class AppContainer extends React.Component {
 
   onAdd(event) {
     event.preventDefault()
-    const { accountName } = this.props
+    const {accountName} = this.props
     //TODO: do we use location.hash?  or something else?
     const urlHash = location.hash
-    const name = prompt(`Enter title for current view [${urlHash.substring(1)}]`, urlHash.substring(1))
+    const name = prompt(
+      `Enter title for current view [${urlHash.substring(1)}]`,
+      urlHash.substring(1)
+    )
 
     if (name) {
-      addQuickLink(
-        accountName,
-        name,
-        urlHash
-      )
+      addQuickLink(accountName, name, urlHash)
     }
   }
 
@@ -74,11 +73,11 @@ class AppContainer extends React.Component {
   }
 
   render() {
-    const { linkList, accountList } = this.state
-    const { accountName, location } = this.props
+    const {linkList, accountList} = this.state
+    const {accountName, location} = this.props
 
     const moreProps = {
-      className: (location === 'widget') ? 'py' : ''
+      className: location === 'widget' ? 'py' : ''
     }
 
     return (

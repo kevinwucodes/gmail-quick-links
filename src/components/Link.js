@@ -3,19 +3,27 @@ import React from 'react'
 const renderGlobeCircle = type => onClickGlobeCircle => {
   return (
     <span
-      className={'glyph ' + ((type == 'global') ? 'global' : 'circle')}
+      className={'glyph ' + (type == 'global' ? 'global' : 'circle')}
       title="toggle global/single"
       onClick={event => onClickGlobeCircle()}
     />
   )
 }
 
-const Link = ({ type, name, urlHash, onClickLink, onDelete, onClickGlobeCircle }) => {
+const Link = ({
+  type,
+  name,
+  urlHash,
+  onClickLink,
+  onDelete,
+  onClickGlobeCircle
+}) => {
   return (
     <div>
       <a
         style={{
-          color: getComputedStyle(document.getElementsByClassName("pU")[0]).color
+          color: getComputedStyle(document.getElementsByClassName('pU')[0])
+            .color
         }}
         className="po"
         title={urlHash}
@@ -28,10 +36,8 @@ const Link = ({ type, name, urlHash, onClickLink, onDelete, onClickGlobeCircle }
         title="delete"
         onClick={event => onDelete()}
       />
-      {
-        renderGlobeCircle(type)(onClickGlobeCircle)
-      }
-      <div className="clear"></div>
+      {renderGlobeCircle(type)(onClickGlobeCircle)}
+      <div className="clear" />
     </div>
   )
 }

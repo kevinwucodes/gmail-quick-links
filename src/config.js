@@ -1,7 +1,7 @@
 export const GMAIL_QUICK_LINKS_NAME = {
-  name: "Gmail Quick Links",
-  divId: "gmailQuickLinks",
-  version: "0.3.6"
+  name: 'Gmail Quick Links',
+  divId: 'gmailQuickLinks',
+  version: '0.3.6'
 }
 
 // this should come out of chrome.storage apis
@@ -11,21 +11,24 @@ export const storage = chrome.storage
 export const getGmailLocationToInject = () => {
   // where we want to put the search quick links
   // this has be be defined after the page loads and becomes ready
-  return document.querySelector("div.wT")
+  return document.querySelector('div.wT')
 }
 
 const widgetMainPanel = () => document.querySelector('div.akc.aZ6')
-export const widgetInsidePanel = () => document.querySelector('div.T0.pp.saH2Ef')
+export const widgetInsidePanel = () =>
+  document.querySelector('div.T0.pp.saH2Ef')
 
 //inside gmail controls container - contains labels such as inbox/starred/drafts/etc
-export const labelControlsContainer = () => document.getElementsByClassName('ajl aib aZ6')[0]
+export const labelControlsContainer = () =>
+  document.getElementsByClassName('ajl aib aZ6')[0]
 
 //gmail controls container
-export const gmailControlsContainer = () => document.getElementsByClassName('aj9 pp')[0]
+export const gmailControlsContainer = () =>
+  document.getElementsByClassName('aj9 pp')[0]
 
 //hamburger menu (materialUi gmail)
-export const hambugerMenuContainer = () => document.getElementsByClassName('gb_jc')[0]
-
+export const hambugerMenuContainer = () =>
+  document.getElementsByClassName('gb_jc')[0]
 
 /*
 the storage looks something like this:
@@ -60,13 +63,12 @@ the storage looks something like this:
 }
 */
 
-
 export const getQuickLinks = callback => {
   storage.sync.get(null, callback)
 }
 
 //TODO: we need to check for chrome.runtime errors, promisify everything?
-export const addQuickLink = (accountName, name, urlHash ) => {
+export const addQuickLink = (accountName, name, urlHash) => {
   getQuickLinks(dataset => {
     // does the accountName already exist?
     if (dataset.accountList && dataset.accountList[accountName]) {
@@ -102,14 +104,14 @@ export const toggleLink = (type, name, accountName) => {
   if (type === 'global') {
     // then make it NOT global
     getQuickLinks(dataset => {
-      const { urlHash } = dataset.linkList[name]
+      const {urlHash} = dataset.linkList[name]
       addQuickLink(accountName, name, urlHash)
       removeGlobalLink(name)
     })
   } else {
     // else make it global
     getQuickLinks(dataset => {
-      const { urlHash } = dataset.accountList[accountName][name]
+      const {urlHash} = dataset.accountList[accountName][name]
 
       // remove the local account
       removeAccountLink(accountName, name)
@@ -130,7 +132,7 @@ export const toggleLink = (type, name, accountName) => {
 export const removeGlobalLink = name => {
   getQuickLinks(item => {
     // removes the 'name' ES7 style!
-    const { [name]: deleted, ...links } = item.linkList
+    const {[name]: deleted, ...links} = item.linkList
     storage.sync.set({
       linkList: links
     })
@@ -139,9 +141,8 @@ export const removeGlobalLink = name => {
 
 export const removeAccountLink = (accountName, name) => {
   getQuickLinks(dataset => {
-
     // removes the 'name' ES7 style!
-    const { [name]: deleted, ...links } = dataset.accountList[accountName]
+    const {[name]: deleted, ...links} = dataset.accountList[accountName]
 
     storage.sync.set({
       accountList: {
