@@ -14,19 +14,13 @@
   "homepage_url": "https://github.com/kevinwucodes/gmail-quick-links",
 
   "content_scripts": [
-     {
-       "matches": ["https://mail.google.com/*"],
-       "css": ["default.css"],
-       "js": [
-         "react.js",
-         "react-dom.js",
-         "dist.gmailquicklinks.bundle.js"
-       ],
-       "run_at": "document_idle"
-     }
-   ],
+    {
+      "matches": ["https://mail.google.com/*"],
+      "css": ["default.css"],
+      "js": ["react.js", "react-dom.js", "dist.gmailquicklinks.bundle.js"],
+      "run_at": "document_idle"
+    }
+  ],
 
-   "permissions": [
-     "storage"
-   ]
+  "permissions": ["storage"]
 }
