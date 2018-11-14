@@ -45,7 +45,8 @@ const injectReact = location => {
     ? //new gmail ui
       (
         document.querySelectorAll('a[class="gb_b gb_eb gb_R"]')[0] ||
-        document.querySelectorAll('a[class="gb_b gb_db gb_R"]')[0]
+        document.querySelectorAll('a[class="gb_b gb_db gb_R"]')[0] ||
+        document.querySelectorAll('a[class="gb_b gb_fb gb_R"]')[0]
       ).attributes['aria-label'].nodeValue.match(/\(([^)]+)\)/)[1]
     : //old gmail ui
       document
@@ -78,7 +79,8 @@ const checkWidgetPanel = untilStop => {
 //is this the new gmail?  do we have an image showing the new gmail ui logo?
 const isMaterialUi = () =>
   document.getElementsByClassName('gb_Wa')[1] ||
-  document.getElementsByClassName('gb_Va')[1]
+  document.getElementsByClassName('gb_Va')[1] ||
+  document.getElementsByClassName('gb_Xa')[1]
     ? true
     : false
 
