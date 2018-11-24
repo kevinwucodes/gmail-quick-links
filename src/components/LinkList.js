@@ -34,7 +34,7 @@ const renderList = linkList => accountList => onDelete => onClickGlobeCircle => 
     return (
       <div
         className="n0"
-        style={{ fontSize: '100%', textAlign: 'left', cursor: 'auto' }}
+        style={{fontSize: '100%', textAlign: 'left', cursor: 'auto'}}
       >
         nothing to list: To add one, enter a gmail search and click "Add" to
         create a quick list
@@ -42,7 +42,7 @@ const renderList = linkList => accountList => onDelete => onClickGlobeCircle => 
     )
   } else {
     const linksArray = Object.keys(linkList).map(key => {
-      const { urlHash } = linkList[key]
+      const {urlHash} = linkList[key]
       return (
         <Link
           key={key}
@@ -56,7 +56,7 @@ const renderList = linkList => accountList => onDelete => onClickGlobeCircle => 
     })
 
     const accountArray = Object.keys(accountList).map(key => {
-      const { urlHash } = accountList[key]
+      const {urlHash} = accountList[key]
       return (
         <Link
           key={key}
@@ -108,16 +108,16 @@ const LinkList = ({
           <h2 className="pw">Quick Links</h2>
         </div>
         <div
-          className="pU"
-          style={{ fontSize: '100%', textDecoration: 'underline' }}
+          className="n0"
+          style={{textDecoration: 'underline'}}
           title="Add Quick Link"
           onClick={event => onAdd(event)}
         >
-          Add
+          Add Quick Link
         </div>
       </div>
 
-      <div id="listContainer">
+      <div id="listContainer" style={{paddingBottom: '10px'}}>
         <div style={style.list}>
           {renderList(linkList)(accountList)(onDelete)(onClickGlobeCircle)}
         </div>

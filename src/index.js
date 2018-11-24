@@ -1,15 +1,13 @@
-import React, { Component } from 'react'
-import { render } from 'react-dom'
+import React, {Component} from 'react'
+import {render} from 'react-dom'
 
 import AppContainer from './AppContainer'
 
 import {
   getGmailLocationToInject,
   widgetInsidePanel,
-  labelControlsContainer,
-  gmailControlsContainer,
-  hambugerMenuContainer
-} from './config'
+  labelControlsContainer
+} from './gmailNodes'
 
 const GMAIL_QUICK_LINKS_CONTAINER = 'gmailQuickLinksContainer'
 
