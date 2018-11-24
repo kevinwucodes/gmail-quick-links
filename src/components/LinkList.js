@@ -117,7 +117,7 @@ const LinkList = ({
         </div>
       </div>
 
-      <div id="listContainer">
+      <div id="listContainer" style={{paddingBottom: '10px'}}>
         <div style={style.list}>
           {renderList(linkList)(accountList)(onDelete)(onClickGlobeCircle)}
         </div>
