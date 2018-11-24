@@ -23,7 +23,7 @@ test('renders simple Link', () => {
 
   const link = getByText(/hello/)
 
-  expect(link).toHaveClass('po')
+  expect(link).toHaveClass('n0')
   expect(link).toHaveAttribute('href', 'some-url-here')
   expect(link).toHaveAttribute('title', 'some-url-here')
 })
