@@ -108,12 +108,12 @@ const LinkList = ({
           <h2 className="pw">Quick Links</h2>
         </div>
         <div
-          className="pU"
-          style={{fontSize: '100%', textDecoration: 'underline'}}
+          className="n0"
+          style={{textDecoration: 'underline'}}
           title="Add Quick Link"
           onClick={event => onAdd(event)}
         >
-          Add
+          Add Quick Link
         </div>
       </div>
 

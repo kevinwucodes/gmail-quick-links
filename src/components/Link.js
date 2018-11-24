@@ -21,11 +21,8 @@ const Link = ({
   return (
     <div>
       <a
-        style={{
-          color: getComputedStyle(document.getElementsByClassName('pU')[0])
-            .color
-        }}
-        className="po"
+        style={{textDecoration: 'underline'}}
+        className="n0"
         title={urlHash}
         href={urlHash}
       >
