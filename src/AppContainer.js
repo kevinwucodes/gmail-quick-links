@@ -11,6 +11,14 @@ import {
   GMAIL_QUICK_LINKS_NAME
 } from './config'
 
+import {
+  gmailSideBar,
+  gmailHoverSideBar,
+  quickLinksContainer
+} from './gmailNodes'
+
+var observer
+
 class AppContainer extends React.Component {
   constructor(props) {
     super(props)
@@ -70,6 +78,38 @@ class AppContainer extends React.Component {
 
   componentDidMount() {
     getQuickLinks(this.buildList)
+
+    //are we in collapsed gmail sidebar?
+    if (gmailSideBar().offsetWidth == 72) {
+      //immediately hide it
+      quickLinksContainer().style.display = 'none'
+    }
+
+    observer = new MutationObserver((mutationsList, observer) => {
+      for (var mutation of mutationsList) {
+        if (mutation.type == 'attributes') {
+          if (
+            //are we in a small sidebar?
+            mutation.target.offsetWidth == 72 &&
+            gmailHoverSideBar() === null
+          ) {
+            quickLinksContainer().style.display = 'none'
+          } else {
+            quickLinksContainer().style.display = 'block'
+          }
+        }
+      }
+    })
+
+    observer.observe(gmailSideBar(), {
+      attributes: true,
+      attributeFilter: ['class'],
+      attributeOldValue: true
+    })
+  }
+
+  componentWillUnmount() {
+    observer.disconnect()
   }
 
   render() {

@@ -13,13 +13,18 @@ const widgetMainPanel = () => document.querySelector('div.akc.aZ6')
 const widgetInsidePanel = () => document.querySelector('div.T0.pp.saH2Ef')
 
 const gmailSideBar = () => document.querySelector('div.nH.oy8Mbf.nn.aeN')
+
 const gmailHoverSideBar = () =>
   document.querySelector('div.nH.oy8Mbf.nn.aeN.bhZ.bym')
+
+const quickLinksContainer = () =>
+  document.querySelector('#gmailQuickLinksContainer')
 
 export {
   gmailSideBar,
   gmailHoverSideBar,
   getGmailLocationToInject,
   widgetInsidePanel,
-  labelControlsContainer
+  labelControlsContainer,
+  quickLinksContainer
 }
