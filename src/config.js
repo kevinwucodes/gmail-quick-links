@@ -8,28 +8,6 @@ export const GMAIL_QUICK_LINKS_NAME = {
 //TODO: how do we sync this in firefox?
 export const storage = chrome.storage
 
-export const getGmailLocationToInject = () => {
-  // where we want to put the search quick links
-  // this has be be defined after the page loads and becomes ready
-  return document.querySelector('div.wT')
-}
-
-const widgetMainPanel = () => document.querySelector('div.akc.aZ6')
-export const widgetInsidePanel = () =>
-  document.querySelector('div.T0.pp.saH2Ef')
-
-//inside gmail controls container - contains labels such as inbox/starred/drafts/etc
-export const labelControlsContainer = () =>
-  document.getElementsByClassName('ajl aib aZ6')[0]
-
-//gmail controls container
-export const gmailControlsContainer = () =>
-  document.getElementsByClassName('aj9 pp')[0]
-
-//hamburger menu (materialUi gmail)
-export const hambugerMenuContainer = () =>
-  document.getElementsByClassName('gb_jc')[0]
-
 /*
 the storage looks something like this:
 
