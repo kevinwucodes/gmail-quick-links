@@ -82,7 +82,9 @@ const checkWidgetPanel = untilStop => {
 const isMaterialUi = () =>
   document.getElementsByClassName('gb_Wa')[1] ||
   document.getElementsByClassName('gb_Va')[1] ||
-  document.getElementsByClassName('gb_Xa')[1]
+  document.getElementsByClassName('gb_Xa')[1] ||
+  document.getElementsByClassName('gb_Ya')[1] ||
+  document.getElementsByClassName('gb_Za')[1]
     ? true
     : false
 
