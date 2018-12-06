@@ -13,12 +13,16 @@ use them, they're great.
 
 ### Background
 
-As of 3/24/2017, Google will be retiring the Gmail Experimental Labs soon.
+As of 3/24/2017, Google retired the Gmail Experimental Labs, which included the
+original Dan P. Gmail Labs Quick Links extension. This extension was built to
+bring back that original Quick Links experience.
 
-You could run this extension alongside the original Dan P. Gmail Labs extension,
-but you'll need to toggle between the gadget pages in gmail to see this
-extension. If you have existing gmail labs loaded, you'll find the gadget page
-toggle in the lower left navigation pane that looks like a three dots.
+### Help, the extension worked before and it no longer works!
+
+Gmail aggresively changes their UI styles without warning. The extension looks
+at certain class names to determine where to insert the Quick Links. If none is
+found, it cannot insert. If you are noticing that Quick Links no longer appear
+in your navigation, please file an issue.
 
 ### App IDs
 
