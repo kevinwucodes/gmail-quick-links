@@ -44,7 +44,11 @@ const injectReact = location => {
       (
         document.querySelectorAll('a[class="gb_b gb_eb gb_R"]')[0] ||
         document.querySelectorAll('a[class="gb_b gb_db gb_R"]')[0] ||
-        document.querySelectorAll('a[class="gb_b gb_fb gb_R"]')[0]
+        document.querySelectorAll('a[class="gb_b gb_fb gb_R"]')[0] ||
+        document.querySelectorAll('a[class="gb_b gb_gb gb_R"]')[0] ||
+        document.querySelectorAll('a[class="gb_b gb_hb gb_R"]')[0] ||
+        document.querySelectorAll('a[class="gb_b gb_ib gb_R"]')[0] ||
+        document.querySelectorAll('a[class="gb_b gb_jb gb_R"]')[0]
       ).attributes['aria-label'].nodeValue.match(/\(([^)]+)\)/)[1]
     : //old gmail ui
       document
