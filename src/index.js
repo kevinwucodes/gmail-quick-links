@@ -5,6 +5,7 @@ import AppContainer from './AppContainer'
 
 import {
   getGmailLocationToInject,
+  gmailAccountName,
   widgetInsidePanel,
   labelControlsContainer
 } from './gmailNodes'
@@ -35,18 +36,9 @@ const injectReact = location => {
   console.log('Loaded Gmail Quick Links')
 
   //TODO: what is the person isn't signed in?  Does this crash extension?
-  const currentAccountName = (
-    document.querySelectorAll('a[class="gb_b gb_eb gb_R"]')[0] ||
-    document.querySelectorAll('a[class="gb_b gb_db gb_R"]')[0] ||
-    document.querySelectorAll('a[class="gb_b gb_fb gb_R"]')[0] ||
-    document.querySelectorAll('a[class="gb_b gb_gb gb_R"]')[0] ||
-    document.querySelectorAll('a[class="gb_b gb_hb gb_R"]')[0] ||
-    document.querySelectorAll('a[class="gb_b gb_ib gb_R"]')[0] ||
-    document.querySelectorAll('a[class="gb_b gb_jb gb_R"]')[0]
-  ).attributes['aria-label'].nodeValue.match(/\(([^)]+)\)/)[1]
 
   //load react
-  beginReact(currentAccountName)(location)
+  beginReact(gmailAccountName)(location)
 }
 
 const checkWidgetPanel = untilStop => {

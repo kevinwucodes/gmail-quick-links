@@ -4,6 +4,11 @@ const getGmailLocationToInject = () => {
   return document.querySelector('div.wT')
 }
 
+const gmailAccountName = () =>
+  document
+    .querySelector('a[class="gb_x gb_Da gb_f"]')
+    .attributes['aria-label'].nodeValue.match(/\(([^)]+)\)/)[1]
+
 //inside gmail controls container - contains labels such as inbox/starred/drafts/etc
 const labelControlsContainer = () =>
   document.getElementsByClassName('ajl aib aZ6')[0]
@@ -24,6 +29,7 @@ export {
   gmailSideBar,
   gmailHoverSideBar,
   getGmailLocationToInject,
+  gmailAccountName,
   widgetInsidePanel,
   labelControlsContainer,
   quickLinksContainer
