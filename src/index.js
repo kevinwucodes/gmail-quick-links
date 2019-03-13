@@ -38,7 +38,7 @@ const injectReact = location => {
   //TODO: what is the person isn't signed in?  Does this crash extension?
 
   //load react
-  beginReact(gmailAccountName)(location)
+  beginReact(gmailAccountName())(location)
 }
 
 const checkWidgetPanel = untilStop => {
