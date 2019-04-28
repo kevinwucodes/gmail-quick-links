@@ -80,7 +80,9 @@ class AppContainer extends React.Component {
     getQuickLinks(this.buildList)
 
     //are we in collapsed gmail sidebar?
-    if (gmailSideBar().offsetWidth == 72) {
+    //also check that we are compatible with simplify (https://github.com/leggett/simplify)
+    //because simplify changes the width to zero
+    if (gmailSideBar().offsetWidth == 72 || gmailSideBar().offsetWidth == 0) {
       //immediately hide it
       quickLinksContainer().style.display = 'none'
     }
@@ -90,7 +92,10 @@ class AppContainer extends React.Component {
         if (mutation.type == 'attributes') {
           if (
             //are we in a small sidebar?
-            mutation.target.offsetWidth == 72 &&
+            //also check that we are compatible with simplify (https://github.com/leggett/simplify)
+            //because simplify changes the width to zero
+            (mutation.target.offsetWidth == 72 ||
+              mutation.target.offsetWidth == 0) &&
             gmailHoverSideBar() === null
           ) {
             quickLinksContainer().style.display = 'none'
