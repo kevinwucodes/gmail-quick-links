@@ -5,9 +5,10 @@ const getGmailLocationToInject = () => {
 }
 
 const gmailAccountName = () =>
-  document
-    .querySelector('a[class="gb_y gb_Ea gb_f"]')
-    .attributes['aria-label'].nodeValue.match(/\(([^)]+)\)/)[1]
+  Array.from(document.querySelectorAll('a[aria-label]'))
+    .map(n => n.attributes['aria-label'].nodeValue)
+    .find(t => /\(.+@.+\)/.test(t))
+    .match(/\((.+@.+)\)/)[1]
 
 //inside gmail controls container - contains labels such as inbox/starred/drafts/etc
 const labelControlsContainer = () =>
