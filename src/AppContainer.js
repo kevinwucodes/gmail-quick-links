@@ -132,10 +132,12 @@ class AppContainer extends React.Component {
           accountList={accountList[accountName]}
           onAdd={this.onAdd}
           onDelete={(type, name) => {
-            if (type === 'global') {
-              removeGlobalLink(name)
-            } else {
-              removeAccountLink(accountName, name)
+            if (confirm('Delete quick link "' + name + '"?')) {
+              if (type === 'global') {
+                removeGlobalLink(name)
+              } else {
+                removeAccountLink(accountName, name)
+              }
             }
           }}
           onClickGlobeCircle={(type, name) => {
