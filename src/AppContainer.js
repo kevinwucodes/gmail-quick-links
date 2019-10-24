@@ -7,6 +7,7 @@ import {
   addQuickLink,
   removeGlobalLink,
   removeAccountLink,
+  renameLink,
   toggleLink,
   GMAIL_QUICK_LINKS_NAME
 } from './config'
@@ -138,6 +139,12 @@ class AppContainer extends React.Component {
               } else {
                 removeAccountLink(accountName, name)
               }
+            }
+          }}
+          onRename={(type, name) => {
+            const newName = prompt('Rename quick link "' + name + '"?', name)
+            if (newName) {
+              renameLink(type, name, newName, accountName)
             }
           }}
           onClickGlobeCircle={(type, name) => {

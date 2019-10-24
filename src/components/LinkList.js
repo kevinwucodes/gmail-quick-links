@@ -23,8 +23,9 @@ const style = {
   }
 }
 
-const renderList = linkList => accountList => onDelete => onClickGlobeCircle => {
+const renderList = linkList => accountList => onDelete => onRename => onClickGlobeCircle => {
   const _onDelete = (type, key) => () => onDelete(type, key)
+  const _onRename = (type, key) => () => onRename(type, key)
   const _onClickGlobeCircle = (type, key) => () => onClickGlobeCircle(type, key)
 
   if (
@@ -50,6 +51,7 @@ const renderList = linkList => accountList => onDelete => onClickGlobeCircle => 
           name={key}
           urlHash={urlHash}
           onDelete={_onDelete('global', key)}
+          onRename={_onRename('global', key)}
           onClickGlobeCircle={_onClickGlobeCircle('global', key)}
         />
       )
@@ -64,6 +66,7 @@ const renderList = linkList => accountList => onDelete => onClickGlobeCircle => 
           name={key}
           urlHash={urlHash}
           onDelete={_onDelete('account', key)}
+          onRename={_onRename('account', key)}
           onClickGlobeCircle={_onClickGlobeCircle('account', key)}
         />
       )
@@ -94,6 +97,7 @@ const LinkList = ({
   accountList = {},
   onAdd,
   onDelete,
+  onRename,
   onClickGlobeCircle
 }) => {
   return (
@@ -119,7 +123,7 @@ const LinkList = ({
 
       <div id="listContainer" style={{paddingBottom: '10px'}}>
         <div style={style.list}>
-          {renderList(linkList)(accountList)(onDelete)(onClickGlobeCircle)}
+          {renderList(linkList)(accountList)(onDelete)(onRename)(onClickGlobeCircle)}
         </div>
       </div>
     </div>

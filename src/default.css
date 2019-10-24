@@ -13,6 +13,15 @@ span.global {
   margin-left: 5px;
 }
 
+span.rename {
+  /*https://icons8.com/icon/57888/edit-file*/
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAA1UlEQVQ4jc3SMU5CURAF0PMlgASkcBNughgpaHUnJKxDSmyNK9BGSmyUHUDDDrA1AYUCiv8wzx/5H6y8yTRv5s7c+3L5b+hjhU2mPtEqIpfCYD3zXsEa70VLKvjKeb/EHFd/WRDbWcbNkzxJASskoap5nH0KcnGIgiyaeMIM7WMVNPCGATqYHaOgjiEm6OIG00MV1DDCvTQvA4yldr6xC1IjQ66Gyw9h5g6vOPvt0q2fUYYenlEOS15EaU32SI7xiA+c41TqfbFrFn1iggup1xGuYzJsAWFPL7QmwwwcAAAAAElFTkSuQmCC');
+  background-repeat: no-repeat;
+  float: right;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
 span.delete {
   /*https://icons8.com/icon/11997/delete*/
   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlElEQVQ4T62TwRGAIAwEL3/asQILQTvTQrQB2/EfB1An6MFD9JuwOTYoaPyk8Tz+Bex9N0Ghbt1GlozVswSxAeKhOj0hdw06u2UbrgGvKzBI6XCAUAcWAgk94vGYXExwFQwkjMliWz/FLSQAfAxJnFQT2DunRi6WOmDCatvhayTCShACAOyerbDTS1b/9yl/+bGaExzwjmgRWfhWGQAAAABJRU5ErkJggg==');

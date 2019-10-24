@@ -130,3 +130,28 @@ export const removeAccountLink = (accountName, name) => {
     })
   })
 }
+
+export const renameLink = (type, name, newName, accountName) => {
+  getQuickLinks(dataset => {
+    if (type === 'global') {
+      const globalList = dataset.linkList
+      globalList[newName] = globalList[name]
+      delete globalList[name]
+      storage.sync.set({
+        linkList: globalList
+      })
+    } else {
+      const accountNameList = dataset.accountList[accountName]
+      accountNameList[newName] = accountNameList[name]
+      delete accountNameList[name]
+      storage.sync.set({
+        accountList: {
+          ...dataset.accountList,
+          [accountName]: {
+            ...accountNameList
+          }
+        }
+      })
+    }
+  })
+}
