@@ -16,6 +16,7 @@ const Link = ({
   urlHash,
   onClickLink,
   onDelete,
+  onRename,
   onClickGlobeCircle
 }) => {
   return (
@@ -32,6 +33,11 @@ const Link = ({
         className="glyph delete"
         title="delete"
         onClick={event => onDelete()}
+      />
+      <span
+        className="glyph rename"
+        title="rename"
+        onClick={event => onRename()}
       />
       {renderGlobeCircle(type)(onClickGlobeCircle)}
       <div className="clear" />

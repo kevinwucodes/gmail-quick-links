@@ -13,13 +13,22 @@ span.global {
   margin-left: 5px;
 }
 
+span.rename {
+  /*https://icons8.com/icon/20388/pencil-drawing*/
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABmJLR0QA/wD/AP+gvaeTAAAA70lEQVQokbXRwUoCURTG8f8dpiG3ggUDwWVaJO58gUA3vYC9QongzoU9h1BjrcRNm1YtA0XatzcIWkWEunM2Mhw3k8yMd1LBzvIcfvd+nAP/XdLBFZ8bEVS8b2+EDxwT8gKU6KJFqCuFAFhbwAFQilpX3HP3myATSweXkFEMRgOu6dLOjB2LemYYv7OgByQXkBE1DSuqydca3gUm8K4Q4gvTTgtbFQxwbIJJ7Kgap86cA/WT+rFqgiv85JfPZ8GhxkLjOUH0gDHqGv74zjdazxdM5zmwsDix+5sgRHcWESkeTR6Hn97tZePt9S+wt1oCQiVcecKDUfIAAAAASUVORK5CYII=');
+  background-repeat: no-repeat;
+  float: right;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
 span.delete {
   /*https://icons8.com/icon/11997/delete*/
   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlElEQVQ4T62TwRGAIAwEL3/asQILQTvTQrQB2/EfB1An6MFD9JuwOTYoaPyk8Tz+Bex9N0Ghbt1GlozVswSxAeKhOj0hdw06u2UbrgGvKzBI6XCAUAcWAgk94vGYXExwFQwkjMliWz/FLSQAfAxJnFQT2DunRi6WOmDCatvhayTCShACAOyerbDTS1b/9yl/+bGaExzwjmgRWfhWGQAAAABJRU5ErkJggg==');
   background-repeat: no-repeat;
   float: right;
   cursor: pointer;
-  margin-left: 5px;
+  margin-left: 2px;
 }
 
 span.circle {
