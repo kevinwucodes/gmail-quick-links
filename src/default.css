@@ -14,8 +14,8 @@ span.global {
 }
 
 span.rename {
-  /*https://icons8.com/icon/57888/edit-file*/
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAA1UlEQVQ4jc3SMU5CURAF0PMlgASkcBNughgpaHUnJKxDSmyNK9BGSmyUHUDDDrA1AYUCiv8wzx/5H6y8yTRv5s7c+3L5b+hjhU2mPtEqIpfCYD3zXsEa70VLKvjKeb/EHFd/WRDbWcbNkzxJASskoap5nH0KcnGIgiyaeMIM7WMVNPCGATqYHaOgjiEm6OIG00MV1DDCvTQvA4yldr6xC1IjQ66Gyw9h5g6vOPvt0q2fUYYenlEOS15EaU32SI7xiA+c41TqfbFrFn1iggup1xGuYzJsAWFPL7QmwwwcAAAAAElFTkSuQmCC');
+  /*https://icons8.com/icon/20388/pencil-drawing*/
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABmJLR0QA/wD/AP+gvaeTAAAA70lEQVQokbXRwUoCURTG8f8dpiG3ggUDwWVaJO58gUA3vYC9QongzoU9h1BjrcRNm1YtA0XatzcIWkWEunM2Mhw3k8yMd1LBzvIcfvd+nAP/XdLBFZ8bEVS8b2+EDxwT8gKU6KJFqCuFAFhbwAFQilpX3HP3myATSweXkFEMRgOu6dLOjB2LemYYv7OgByQXkBE1DSuqydca3gUm8K4Q4gvTTgtbFQxwbIJJ7Kgap86cA/WT+rFqgiv85JfPZ8GhxkLjOUH0gDHqGv74zjdazxdM5zmwsDix+5sgRHcWESkeTR6Hn97tZePt9S+wt1oCQiVcecKDUfIAAAAASUVORK5CYII=');
   background-repeat: no-repeat;
   float: right;
   cursor: pointer;
@@ -28,7 +28,7 @@ span.delete {
   background-repeat: no-repeat;
   float: right;
   cursor: pointer;
-  margin-left: 5px;
+  margin-left: 2px;
 }
 
 span.circle {
