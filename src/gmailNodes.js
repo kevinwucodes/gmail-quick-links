@@ -1,7 +1,7 @@
 const getGmailLocationToInject = () => {
   // where we want to put the search quick links
   // this has be be defined after the page loads and becomes ready
-  return document.querySelector('div.wT')
+  return document.querySelector('#\\:mh')
 }
 
 const gmailAccountName = () =>
