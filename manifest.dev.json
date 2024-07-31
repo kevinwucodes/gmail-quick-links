@@ -1,7 +1,7 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Gmail Quick Links",
-  "version": "0.3.21",
+  "version": "0.3.22",
   "description": "a replacement for Gmail Quick Links",
   "short_name": "Gmail Links",
   "icons": {
