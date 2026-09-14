@@ -58,8 +58,12 @@ class AppContainer extends React.Component {
   onAdd(event) {
     event.preventDefault()
     const {accountName} = this.props
-    //TODO: do we use location.hash?  or something else?
+    // Gmail appends ?compose=<draft id> to the hash while a compose window is
+    // open. Captured as-is, that id is stored with the link and reopens the
+    // draft on every later click. See #86.
     const urlHash = location.hash
+      .replace(/[?&]compose=[^&]*/g, '')
+      .replace(/\?$/, '')
     const name = prompt(
       `Enter title for current view [${urlHash.substring(1)}]`,
       urlHash.substring(1)
