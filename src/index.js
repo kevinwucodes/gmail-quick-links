@@ -33,7 +33,7 @@ const injectReact = location => {
     )
   }
 
-  console.log('Loaded Gmail Quick Links')
+  console.log(`Loaded Gmail Quick Links v${GMAIL_QUICK_LINKS_VERSION}`)
 
   //TODO: what is the person isn't signed in?  Does this crash extension?
 
